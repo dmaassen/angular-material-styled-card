@@ -1,0 +1,5 @@
+@use "./cards/cards-theme" as card;
+
+@mixin theme($theme) {
+  @include card.theme($theme);
+}

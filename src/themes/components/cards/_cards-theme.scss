@@ -1,0 +1,36 @@
+// Card Theme
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  $color-config: mat.get-color-config($theme);    
+  $primary: map.get($color-config, "primary");
+  $accent: map.get($color-config, "accent");
+  $is-dark-theme: map.get($color-config, 'is-dark');
+
+  .styled-card-outlined {
+    // TODO: add to theme as "outline"
+    outline: 1px solid #757575;
+  }
+
+  .styled-card-primary {
+    @if $is-dark-theme == false {
+      background-color: mat.get-color-from-palette($primary, 50);
+    }
+    
+  }
+
+  .styled-card-accent {
+    @if $is-dark-theme == false {
+      background-color: mat.get-color-from-palette($accent, 50);
+    }
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

@@ -1,0 +1,24 @@
+// Card
+.styled-card {
+  border-radius: 0.5rem!important;
+  max-width: 400px;
+}
+
+.styled-card-outlined {
+  box-shadow: none!important;
+}
+
+.styled-card-filled {
+  box-shadow: none!important;
+}
+
+.styled-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  button {
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+}

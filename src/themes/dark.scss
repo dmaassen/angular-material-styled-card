@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use './components' as components;
+
+@import './palette';
+
+$dark_primary: mat.define-palette($theme-primary, A100);
+$dark_accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$dark_warn: mat.define-palette(mat.$red-palette);
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark_primary,
+    accent: $dark_accent,
+    warn: $dark_warn,
+  ),
+));
+
+:root[theme='dark'] {
+  --theme-background-color: #303030;
+}
+
+.dark {
+  @include mat.all-component-colors($dark-theme);
+  @include components.theme($dark-theme);
+
+  color: #fff;
+
+  .mat-card-footer {
+    margin: 0 -15px -16px -15px;
+
+    .mat-progress-bar {
+      border-bottom-left-radius: 64px;
+      border-bottom-right-radius: 64px;
+    }
+  }
+}

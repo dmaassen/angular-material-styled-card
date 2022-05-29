@@ -1,0 +1,35 @@
+.demo {
+  padding: 1rem!important;
+}
+
+.theme-toggle {
+  align-self: flex-start;
+
+  .mat-button-toggle {
+    display: flex;
+    align-items: center;
+    min-height: 2rem;
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section {
+  padding: 1rem;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
